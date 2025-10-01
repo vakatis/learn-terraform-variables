@@ -3,7 +3,7 @@ terraform {
   cloud {
     organization = "policy-as-code-training"
     workspaces {
-      name = "policy-dev-{your-initials}"
+      name = "policy-dev-vs"
     }
   }
 */
@@ -39,7 +39,7 @@ module "vpc" {
 
   tags = {
     project     = "project-alpha",
-    environment = "development"
+    environment = "dev"
   }
 }
 
