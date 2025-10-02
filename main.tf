@@ -3,7 +3,8 @@ terraform {
   cloud {
     organization = "policy-as-code-training"
     workspaces {
-      name = "policy-dev-vs"
+      name = "policy-dev-{your-initials}"
+      project = "policy-as-dev"
     }
   }
 */
