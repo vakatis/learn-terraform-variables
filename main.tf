@@ -73,21 +73,21 @@ module "lb_security_group" {
       from_port   = 22
       to_port     = 22
       protocol    = "tcp"
-      description = "SSH open to the world"
+      description = "SSH restricted to internal network"
       cidr_blocks = "10.0.0.0/16"
     }
   ]
 
   tags = {
     project     = "project-alpha",
-    environment = "dev"
+    environment = "development"
   }
 }
 
 resource "aws_ebs_volume" "unencrypted" {
-  availability_zone = "us-west-1"
+  availability_zone = "us-west-1a"
   size              = 8
-  encrypted         = true # Intentional violation: unencrypted EBS volume
+  encrypted         = true # Remediated: enable encryption
 }
 
 resource "random_string" "lb_id" {
