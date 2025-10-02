@@ -113,7 +113,7 @@ module "elb_http" {
 
   tags = {
     project     = "project-alpha",
-    environment = "dev"
+    environment = "development"
   }
 }
 
