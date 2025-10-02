@@ -66,7 +66,7 @@ module "lb_security_group" {
   description = "Security group for load balancer with HTTP ports open within VPC"
   vpc_id      = module.vpc.vpc_id
 
-  ingress_cidr_blocks = ["0.0.0.0/16"]
+  ingress_cidr_blocks = ["10.0.0.0/16"]
   ingress_rules       = ["ssh-tcp"]
   ingress_with_cidr_blocks = [
     {
@@ -74,7 +74,7 @@ module "lb_security_group" {
       to_port     = 22
       protocol    = "tcp"
       description = "SSH open to the world"
-      cidr_blocks = "0.0.0.0/16"
+      cidr_blocks = "10.0.0.0/16"
     }
   ]
 
